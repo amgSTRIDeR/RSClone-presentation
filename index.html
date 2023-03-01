@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>RS Clone (Trello)<br>
+          <img src="https://y.yarn.co/a5a3931c-201d-4ea3-b10e-b92a246ca532_text.gif" alt="">
+        </section>
+        <section>
+          <section>
+            <h3>Результат командной работы</h3>
+          </section>
+          <section>
+            <h3>frontend</h3>
+            <a href="https://keen-bublanina-94f2dd.netlify.app/" style="font-size: 50px">Deploy</a>
+            <aside class="notes">
+  <ol>
+    <li>Адаптипная верстка</li>
+    <li>Единый стиль приложения, реализованный с помощью tailwindcss</li>
+    <li>Регистрация
+      <ol>
+        <li>При нажатии на кнопку "create account" происходит открытие формы регистрации</li>
+        <li>После валидации открывается страница с рабочими пространствами</li>
+        <li>Есть валидация данных</li>
+      </ol>
+    </li>
+    <li>Авторизация/logout
+      <ol>
+        <li>После нажатия на кнопку "Already have an account?" открывается формы для авторизации</li>
+        <li>Пользователь должен ввести данные, которые были указаны при регистрации</li>
+        <li>Есть валидация данных</li>
+      </ol>
+    </li>
+    <li>Смена языка (русский, английский, украинский)</li>
+    <li>Смена темы
+      <ol>
+        <li>Реализованы три цветовые схемы</li>
+        <li>Изменяются так же визуальные стили для интерактивных элементов</li>
+        <li>Изменение тем затрагивает в том числе svg-изображения</li>
+      </ol>
+    </li>
+    <li>Создание досок
+      <ol>
+        <li style="color: orange">Избранные доски Реализовано отображение избранных досок, не реализовано добавление/удаление</li>
+        <li style="color: orange">Карточки только добавление без редактирования и удаления</li>
+      </ol>
+    </li>
+  </ol>
+  <ol>
+    <li style="color: red">Колонки (добавление, редактирование удаление)</li>
+    <li style="color: red">Drag&amp;Drop</li>
+    <li style="color: red">Поиск по доскам</li>
+    <li style="color: red">Взаимодействие с другими пользователями</li>
+  </ol>
+  
+            </aside>
+          </section>
+          <section>
+            <h3>backend</h3>
+            <aside class="notes">
+              <ol>
+                <li>Использован Rest API</li>
+                <li>Использован паттерн MVC</li>
+                <li>Используется база данных Mongo DB</li>
+                <li>Используется ORM Mongoose</li>
+                <li>Для приложения использовались nodejs и express</li>
+                <li>Сервер корректно работает с пользователем:
+                  <ol>
+                    <li>добавление пользователя</li>
+                    <li>удаление пользователя</li>
+                    <li>изменение данных пользователя</li>
+                    <li>получение одного/всех пользователя(ей)</li>
+                  </ol>
+                </li>
+                <li>Сервер корректно работает с доской:
+                  <ol>
+                    <li>добавление доски</li>
+                    <li>удаление доски</li>
+                    <li>изменение доски</li>
+                    <li>получение доски/ всех досок</li>
+                  </ol>
+                </li>
+                <li>Сервер корректно работает с карточками:
+                  <ol>
+                    <li>добавление карточки</li>
+                    <li>удаление карточки</li>
+                    <li>изменение карточки:</li>
+                    <li>получение конкретной карточки/всех карточек</li>
+                  </ol>
+                </li>
+                <li>Реализованы связи между элементами БД:
+                  <ol>
+                    <li>связь пользователя с доской и карточкой по id (создатель)</li>
+                    <li>связь доски с пользователем-создателем и пользователями-участниками по id</li>
+                    <li>связь карточки с пользователем-создателем, пользователями/участниками, а также с доской, в которой она создается:</li>
+                  </ol>
+                </li>
+                <li>В случае ошибок приложение возвращает код ошибки с кратким описанием проблемы</li>
+              </ol>
+              
+            </aside>
+          </section>
+
+        </section>
+				<section>
+          <section>Организация работы</section>
+          <section>Первоначальный план с резолюцией ментора
+            <img src="./img/2023-03-01_16-45-37.png" style="max-height: 50vh;" alt="">
+          </section>
+          <section>RACI матрица
+            <a href="https://docs.google.com/spreadsheets/d/1nMDCkLAk96u8m8Y1iCmEU9XvsdjmvubvNpH_ghjHxPs/edit#gid=0">Link</a>
+          </section>
+          <section>Trello
+            <a href="https://trello.com/b/dMGFLmVU/rs-clone">Link</a>
+          </section>
+          <section>GitHub Issues
+            <a href="https://github.com/amgSTRIDeR/RS-Clone/issues">Link</a>
+          </section>
+          <section>
+            Сложности
+            <aside class="notes">
+              <ol>
+                <li>недостаточно проработанный план</li>
+                <li>размытые временные рамки по каждой отдельной задаче</li>
+                <li>слабые методы отчетности и контроля друг за другом</li>
+                <li>несоблюдение Yagni принципа</li>
+                <li>разногласия на почве технической реализации на поздних этапах проекта, когда они должны были быть решены в начале (это про локал сторадж и хранение на беке в последний день</li>
+              </ol></aside>
+          </section>
+        </section>
+        <section>
+          <section>Особенности технической реализации проекта и его репозиторий</section>
+          <section>Использованные библиотеки, фреймворки и технологии
+            <a href="https://github.com/amgSTRIDeR/RS-Clone/blob/main/Readme.md">Readme</a>
+          </section>
+          <section>История коммитов
+            <div><a href="https://github.com/amgSTRIDeR/RS-Clone/pull/39/commits">Frontend</a></div>
+            <div><a href="https://github.com/A-nastasi-a/RS-Clone-backend/commits/main">Backend</a></div>
+          </section>
+          <section>Примеры PR. Рассказать как проходили кодревью, как обеспечивалось качество кода
+            <div><a href="https://github.com/amgSTRIDeR/RS-Clone/pulls?page=1&q=is%3Apr+is%3Aclosed">Frontend</a></div>
+            <div><a href="https://github.com/A-nastasi-a/RS-Clone-backend/pulls?q=is%3Apr+is%3Aclosed">Backend</a></div>
+          </section>
+          <section>технические сложности и проблемы с которым столкнулись в процессе создания приложения, как их решали
+            <aside class="notes">
+              <ol>
+                <li>первый опыт самостоятельной работы с бекендом</li>
+                <li>не оптимальная архитектура - MVC превратилась в VC архитектуру</li>
+              </ol></aside>
+          </section>
+          <section>
+            <div style="display: flex;">
+              <div style="flex: 1">SCSS<img src="./img/image.png" alt=""></div>
+              <div style="flex: 1">Tailwind<img src="./img/tailwind.png" alt=""></div>
+            </div>
+            <aside class="notes">
+              <p>Переход с scss на tailwind после начала проекта</p>
+              </ol></aside>
+          </section>
+        </section>
+        
+        <section>The end<br>
+          <img src="https://media.tenor.com/NidJyk78iAkAAAAd/rick-and-morty-crying.gif" alt="">
+        </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
